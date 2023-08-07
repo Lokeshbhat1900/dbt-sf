@@ -4,11 +4,13 @@ models:
     - name: CUSTOMER
       description: "Cust dbt Model"
       columns:
-          - name: custkey
+          - name: CUSTKEY
             description: "cust key"
             tests:
                 - unique
                 - not_null
-          - name: custname
+          - name: CUSTNAME
+            description: "Cust name"
+          - name: NATIONKEY
             description: "Cust name"
 
