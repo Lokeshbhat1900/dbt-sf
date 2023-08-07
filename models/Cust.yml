@@ -1,14 +1,14 @@
 version: 2
 
 models:
-    - name: Cust
+    - name: CUSTOMER
       description: "Cust dbt Model"
       columns:
-          - name: c_custkey
+          - name: custkey
             description: "cust key"
             tests:
                 - unique
                 - not_null
-          - name: c_name
+          - name: custname
             description: "Cust name"
 

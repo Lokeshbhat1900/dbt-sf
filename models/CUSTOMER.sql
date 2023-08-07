@@ -1,0 +1,1 @@
+Select c_custkey as CUSTKEY,c_name as CUSTNAME from  SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER

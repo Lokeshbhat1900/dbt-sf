@@ -1,2 +1,2 @@
-Select * from {{ref('Cust')}}
-join {{ref('Ord')}} on O_CUSTKEY=c_custkey
+Select * from {{ref('CUSTOMER')}}
+join {{ref('ORDERS')}} on CUSTKEY=custkey
