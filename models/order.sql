@@ -1,3 +1,2 @@
-Select O_ORDERKEY,O_CUSTKEY,O_ORDERSTATUS,O_TOTALPRICE,O_ORDERDATE
-From 
-SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS;
+select o_orderkey, o_custkey, o_orderstatus, o_totalprice, o_orderdate
+from snowflake_sample_data.tpch_sf1.orders
