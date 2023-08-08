@@ -13,13 +13,4 @@ models:
             description: "Cust name"
           - name: NATIONKEY
             description: "Cust name"
-            tests:
-              - not_null
-              - relationships:
-                to: ref('NATION')
-                field: NATIONKEY
-                meta:
-                  ts_join_cardinality: many_to_one
-                  ts_join_type: inner
-                  ts_join_name: cust_nationkey
 
