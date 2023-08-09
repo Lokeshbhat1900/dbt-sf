@@ -1,0 +1,133 @@
+version: 2
+
+models:
+    - name: NATION
+      description: "NATION"
+      columns:
+          - name: NATIONKEY
+            description: ""
+            tests:
+                - unique
+                - not_null
+          - name: NATIONNAME
+            description: ""
+          - name: REGIONKEY
+            description: ""
+          - name: REGIONNAME
+            description: ""				
+    - name: CUSTOMER
+      description: "CUSTOMER"
+      columns:
+          - name: CUSTKEY
+            description: "cust key"
+            tests:
+                - unique
+                - not_null
+          - name: CUSTNAME
+            description: "Cust name"
+          - name: NATIONKEY
+            description: "Cust name"
+            tests:
+            - not_null
+            - relationships:
+                to: ref('NATION')
+                field: NATIONKEY				
+    - name: ORDERS
+      description: "ORDERS"
+      columns:
+          - name: ORDERKEY
+            description: ""
+            tests:
+                - unique
+                - not_null
+          - name: CUSTKEY
+            description: ""
+            tests:
+                - not_null
+                - relationships:
+                    to: ref('CUSTOMER')
+                    field: CUSTKEY
+          - name: ORDERSTATUS
+            description: ""
+          - name: TOTALPRICE
+            description: ""
+          - name: ORDERDATE
+            description: ""	
+    - name: SUPPLIER
+      description: "SUPPLIER"
+      columns:
+          - name: SUPPKEY
+            description: "key"
+            tests:
+                - unique
+                - not_null
+          - name: SUPPNAME
+            description: "name"
+          - name: NATIONKEY
+            description: ""
+            tests:
+            - not_null
+            - relationships:
+                to: ref('NATION')
+                field: NATIONKEY				
+    - name: PART
+      description: "PART"
+      columns:
+          - name: PARTKEY
+            description: "key"
+            tests:
+                - unique
+                - not_null
+          - name: PARTNAME
+            description: "name"
+          - name: MFGR
+            description: ""
+          - name: BRAND
+            description: ""				
+          - name: TYPE
+            description: ""		
+          - name: SIZE
+            description: ""
+    - name: LINEITEM
+      description: "LINEITEM"
+      columns:
+          - name: ORDERKEY
+            description: "key"
+            tests:
+            - not_null
+            - relationships:
+                to: ref('ORDERS')
+                field: ORDERKEY					
+          - name: PARTKEY
+            description: "key"
+            tests:
+            - not_null
+            - relationships:
+                to: ref('PART')
+                field: PARTKEY	
+          - name: SUPPKEY
+            description: "key"
+            tests:
+            - not_null
+            - relationships:
+                to: ref('SUPPLIER')
+                field: SUPPKEY					
+          - name: LINENUMBER
+            description: "name"
+          - name: QUANTITY
+            description: "name"				
+          - name: EXTENDEDPRICE
+            description: "name"
+          - name: DISCOUNT
+            description: "name"
+          - name: TAX
+            description: "name"
+          - name: LINESTATUS
+            description: "name"	
+          - name: SHIPDATE
+            description: "name"	
+          - name: RECEIPTDATE
+            description: "name"
+          - name: COMMITDATE
+            description: "name"
+			
